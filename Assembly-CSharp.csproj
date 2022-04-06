@@ -57,6 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\EnemyAI.cs" />
+    <Compile Include="Assets\Script\Weapon.cs" />
+    <Compile Include="Assets\Script\EnemyHealth.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Asset Packs\Survival Carbine\Thanks To Michael.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

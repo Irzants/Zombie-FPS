@@ -1,0 +1,21 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.30f1 (1fb1bf06830e) revision 2077119'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.18363) 64bit Professional' Language: 'en' Physical Memory: 7132 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+D:\Unity\2020.3.30f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+E:/project/udemy/3D dutorial/Zombie/Zombie-FPS
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+7969
+Successfully changed project path to: E:/project/udemy/3D dutorial/Zombie/Zombie-FPS
+E:/project/udemy/3D dutorial/Zombie/Zombie-FPS
+Using Asset Import Pipeline V2.

@@ -14,20 +14,28 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent navMeshAgent;
     float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false;
+    EnemyHealth health;
 
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        health = GetComponent<EnemyHealth>();
     }
 
     
     void Update()
     {
+        if(health.IsDead())
+        {
+            enabled = false;
+            navMeshAgent.enabled = false; //disabling animator and nav agent on enemy when dead
+        }
+        
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         if(isProvoked)
         {
-            EngageTarget();
+            EngageTarget(); //provoked target when in gizmoz area to hunt player
         }
         else if (distanceToTarget <= chaseRange)
         {
@@ -40,7 +48,7 @@ public class EnemyAI : MonoBehaviour
 
     public void OnDamageTaken()
     {
-        isProvoked = true;
+        isProvoked = true; //when enemy got damaged, provoke on
     }
 
 
@@ -57,6 +65,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    //get the animator from enemy
     private void ChaseTarget()
     {
         GetComponent<Animator>().SetBool("attack", false);
@@ -71,6 +80,8 @@ public class EnemyAI : MonoBehaviour
         Debug.Log(name + "attack" + target.name);
     }
 
+
+    //when provoked, enemy face to target
     private void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
